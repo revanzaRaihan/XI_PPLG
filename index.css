@@ -1,0 +1,53 @@
+/* Page Settings */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: coolvetica;
+}
+@font-face{
+  font-family: coolvetica;
+  src: url(coolvetica.otf);
+}
+.bgc{
+  background-color: #E2EAFC;
+}
+
+/* Navbars */
+nav{
+  background-color: #ABC4FF;
+  padding-top: 0.5px;
+  padding-bottom: 0.5px;
+  box-shadow: 0px 5px lightgrey;
+}
+/* End Navbars */
+
+/* Scroll & Section Setting */
+section{
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerMain{
+  scroll-snap-type: y mandatory;
+  overflow: scroll;
+  height: 100vh;
+}
+/* Scroll & Section Setting */
+
+/* Section1 */
+.section1>.container>p{
+  font-size: 5vh;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: 100px;
+}
+/* End Section1 */
+
+/* Section2 */
+
+/* End Section2 */
