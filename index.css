@@ -39,6 +39,11 @@ section{
 /* Scroll & Section Setting */
 
 /* Section1 */
+
+.section1{
+  scroll-snap-align: start;
+}
+
 .section1>.container>p{
   font-size: 5vh;
   padding: 0;
@@ -49,6 +54,11 @@ section{
 /* End Section1 */
 
 /* Section2 */
+
+.section2{
+  scroll-snap-align: start;
+}
+
 .flowchart {
     display: flex;
     flex-direction: column;
@@ -137,6 +147,11 @@ section{
 /* End Section2 */
 
 /* Section 3 */
+
+.section3 {
+  scroll-snap-align: start;
+}
+
 .jadwalTitle{
   position: relative;
   top: 20px;
