@@ -14,7 +14,7 @@
 }
 
 /* Navbars */
-nav{
+.navs{
   background-color: #ABC4FF;
   padding-top: 0.5px;
   padding-bottom: 0.5px;
@@ -44,10 +44,100 @@ section{
   padding: 0;
   margin: 0;
   position: relative;
-  bottom: 100px;
+  bottom: 80px;
 }
 /* End Section1 */
 
 /* Section2 */
+.flowchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+    bottom: 80px;
+}
 
+.flowchart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transform: translateX(-5%);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.box {
+    width: 20vw;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px 5px 0px 5px;
+}
+
+.line {
+    width: 2px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.branch{
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  width: 21vw;
+  height: 15px;
+  margin-top: 8px;
+  margin-bottom: -10px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transform: translateY(50%);
+  transform: translateX(-5%);
+}
+
+.branch.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flowchart-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Untuk Mengatur Di Screen Mobile */
+@media only screen and (max-width: 600px){
+  .flowchart-item{
+    font-size: 3.5vw;
+  }
+  .box{
+    width: 45vw;
+  }
+  .branch{
+    width: 175px;
+    height: 15px;
+    margin-top: 8px;
+  }
+}
 /* End Section2 */
+
+/* Section 3 */
+.jadwalTitle{
+  position: relative;
+  top: 20px;
+  }
