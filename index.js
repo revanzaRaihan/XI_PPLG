@@ -59,6 +59,16 @@ const waktu = {
   Minggu: ["None", "None", "None", "None", "None"],
 };
 
+const jadwalPiket = {
+  Senin: ["Bagus", "Bambang", "Johan", "Shabir", "Nazril", "Revanza"],
+  Selasa: ["Dhea", "Darren", "Fathi", "Jericho", "Nabil", "Nazwar"],
+  Rabu: ["Farel", "Fathir", "Bowo", "Salsa", "Zaki", "Adrian"],
+  Kamis: ["Dwi", "Bhakti", "Fanny", "Natty", "Bena", "Hafidz"],
+  Jumat: ["Javi", "Ais", "Jessy", "Ferdi", "Zein", "Yogi"],
+  Sabtu: ["None", "None", "None", "None", "None", "none"],
+  Minggu: ["None", "None", "None", "None", "None", "None"],
+};
+
 // FUNCTION UNTUK MENDAPATKAN HARI DARI KALENDER.
 function dapatkanHari() {
   const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
@@ -72,6 +82,7 @@ function updateMapel() {
   const todayMapel = mapel[hariIni];
   const guruMapel = guru[hariIni];
   const waktuMapel = waktu[hariIni];
+  const dapiket = jadwalPiket[hariIni];
   const tanggal = dapatkanHari();
 
 // MAPEL
@@ -90,9 +101,27 @@ function updateMapel() {
   document.getElementById("waktu3").innerText = waktuMapel[2];
   document.getElementById("waktu4").innerText = waktuMapel[3];
   document.getElementById("waktu5").innerText = waktuMapel[4];
+// DAFTAR PIKET
+  document.getElementById("nama1").innerText = dapiket[0];
+  document.getElementById("nama2").innerText = dapiket[1];
+  document.getElementById("nama3").innerText = dapiket[2];
+  document.getElementById("nama4").innerText = dapiket[3];
+  document.getElementById("nama5").innerText = dapiket[4];
+  document.getElementById("nama6").innerText = dapiket[5];
 // TANGGAL HARI INI
   document.getElementById("tanggal").innerText = tanggal;
 }
 
 window.onload = updateMapel;
 // END SISTEM JADWAL
+
+// SISTEM PERGANTIAN JADWAL DAN DAPIKET
+document.getElementById('gantiMapel').addEventListener('click', function() {
+  document.getElementById('itemMapel').classList.add('show');
+  document.getElementById('itemPiket').classList.remove('show');
+});
+
+document.getElementById('gantiPiket').addEventListener('click', function() {
+  document.getElementById('itemMapel').classList.remove('show');
+  document.getElementById('itemPiket').classList.add('show');
+});
