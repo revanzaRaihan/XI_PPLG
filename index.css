@@ -39,26 +39,16 @@ section{
 /* Scroll & Section Setting */
 
 /* Section1 */
-
-.section1{
-  scroll-snap-align: start;
-}
-
 .section1>.container>p{
   font-size: 5vh;
   padding: 0;
   margin: 0;
   position: relative;
-  bottom: 80px;
+  bottom: 50px;
 }
 /* End Section1 */
 
 /* Section2 */
-
-.section2{
-  scroll-snap-align: start;
-}
-
 .flowchart {
     display: flex;
     flex-direction: column;
@@ -129,9 +119,63 @@ section{
     opacity: 1;
     transform: translateY(0);
 }
+/* End Section2 */
+
+/* Section 3 */
+.jadwalTitle{
+  position: relative;
+  top: 22px;
+}
+.jadwalTitle>a{
+  text-decoration: none;
+  color: black;
+}
+#tanggal{
+  padding-bottom: 15px;
+}
+
+#jadwalPiket{
+  margin: 30vw;
+  border: 1px solid black;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+#slotJadwal{
+  border-top: 1px solid grey;
+  padding-top: 10px;
+}
+#slotDapiket{
+  border-top: 1px solid grey;
+  padding-top: 10px;
+}
+.col-3>p{
+  background-color: beige;
+  border-radius: 50px;
+}
+.col-6>p{
+  background-color: lightgreen;
+  border-radius: 50px;
+}
+.hideContent {
+  opacity: 0;
+  transition: opacity 1s ease, height 1s ease;
+  height: 0;
+  overflow: hidden;
+}
+.show {
+  opacity: 1;
+  height: auto;
+}
+/* End Section 3 */
+
+/* Section 4 */
+.section4{
+  font-size: 3vw;
+}
+/* End Section 4  */
 
 /* Untuk Mengatur Di Screen Mobile */
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 900px){
   .flowchart-item{
     font-size: 3.5vw;
   }
@@ -139,20 +183,31 @@ section{
     width: 45vw;
   }
   .branch{
-    width: 175px;
+    width: 48vw;
     height: 15px;
     margin-top: 8px;
   }
-}
-/* End Section2 */
-
-/* Section 3 */
-
-.section3 {
-  scroll-snap-align: start;
-}
-
-.jadwalTitle{
-  position: relative;
-  top: 20px;
+  #jadwalPiket{
+  margin: 20px;
   }
+}
+/* End Line */
+
+/* Untuk Tablet Nexus Gajelas */
+@media only screen and (min-width: 1000px, max-width: 2000px){
+  .flowchart-item{
+    font-size: 3.7vw;
+  }
+  .box{
+    width: 46vw;
+  }
+  .branch{
+    width: 47vw;
+    height: 15px;
+    margin-top: 8px;
+  }
+  #jadwalPiket{
+  margin: 20vw;
+  }
+}
+/* End Line */
