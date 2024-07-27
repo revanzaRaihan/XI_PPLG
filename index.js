@@ -61,7 +61,7 @@ const waktu = {
 
 // FUNCTION UNTUK MENDAPATKAN HARI DARI KALENDER.
 function dapatkanHari() {
-  const days = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
+  const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
   const currentDayIndex = new Date().getDay();
   return days[currentDayIndex];
 }
