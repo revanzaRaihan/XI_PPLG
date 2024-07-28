@@ -1,7 +1,24 @@
-// ANIMASI FLOWCHART
-document.addEventListener('DOMContentLoaded', () => {
-    const items = document.querySelectorAll('.flowchart-item, .branch');
+// ANIMASI TEKS WELCOME
+const texts = ["Hello, World!...", "Welcome to XI PPLG."];
+const textElements = [document.getElementById("typewriter-text1"), document.getElementById("typewriter-text2")];
+let indexes = [0, 0];
 
+function type(elementIndex) {
+  if (indexes[elementIndex] < texts[elementIndex].length) {
+    textElements[elementIndex].textContent += texts[elementIndex].charAt(indexes[elementIndex]);
+    indexes[elementIndex]++;
+    setTimeout(() => type(elementIndex), 100); // Adjust the speed of typing here
+  } else if (elementIndex < textElements.length - 1) {
+    // Start typing the next text after the current one finishes
+    setTimeout(() => type(elementIndex + 1), 500); // Adjust the delay between paragraphs here
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => type(0));
+
+// ANIMASI FLOWCHART DAN IMG
+document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.flowchart-item, .branch, img');
     const isInViewport = (element) => {
         const rect = element.getBoundingClientRect();
         return (
@@ -125,3 +142,44 @@ document.getElementById('gantiPiket').addEventListener('click', function() {
   document.getElementById('itemMapel').classList.remove('show');
   document.getElementById('itemPiket').classList.add('show');
 });
+
+// Get the modal
+var modal = document.getElementById("imageModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var images = document.querySelectorAll("#gallery img");
+var modalImg = document.getElementById("modalImage");
+
+images.forEach(img => {
+    img.onclick = function() {
+        modal.style.display = "flex"; // Use flex to center the modal
+        setTimeout(() => {
+            modal.style.opacity = "1";
+            modal.classList.add("show");
+            modalImg.src = this.src;
+        }, 10); // Small delay to trigger transition
+    }
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.opacity = "0";
+    setTimeout(function(){
+        modal.style.display = "none";
+        modal.classList.remove("show");
+    }, 300); // 300ms matches the CSS transition duration
+}
+
+// Close the modal when clicking outside the image
+modal.onclick = function(event) {
+    if (event.target !== modalImg) {
+        modal.style.opacity = "0";
+        setTimeout(function(){
+            modal.style.display = "none";
+            modal.classList.remove("show");
+        }, 300);
+    }
+          }
