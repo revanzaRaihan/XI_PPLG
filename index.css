@@ -92,17 +92,6 @@ section{
     height: 100%;
     z-index: 1;
 }
-.clouds {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.cloud-img {
-  width: 100%;
-  max-width: 100%;
-}
 /* End Section1 */
 
 /* Section2 */
@@ -112,6 +101,7 @@ section{
     align-items: center;
     margin-top: 50px;
     position: relative;
+    bottom: 80px;
 }
 
 .flowchart-item {
@@ -366,6 +356,7 @@ img.visible{
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
 footer {
   position: fixed;
   bottom: -100px; /* Hide footer */
@@ -376,5 +367,15 @@ footer {
   color: #fff;
   text-align: center;
   transition: bottom 0.5s;
-  padding: 20px;
+  padding: 2px;
+  box-shadow: 0px -4px lightgrey;
+}
+footer>a{
+  text-decoration: none;
+  color: black;
+}
+#footerTitle{
+  position: relative;
+  top: 20px;
+  color: black;
   }
