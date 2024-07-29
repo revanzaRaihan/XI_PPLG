@@ -81,7 +81,7 @@ section{
   bottom: 20px;
 }
 .section1::before{
-  background: url(pics/pic1.jpg);
+  background: url(pics/pic3.jpg);
   background-size: cover;
   background-position: center;
   opacity: 15%;
