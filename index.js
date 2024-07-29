@@ -1,3 +1,5 @@
+// ANIMASI OPENING
+
 // ANIMASI TEKS WELCOME
 const texts = ["Hello, World!...", "Welcome to XI PPLG."];
 const textElements = [document.getElementById("typewriter-text1"), document.getElementById("typewriter-text2")];
@@ -7,7 +9,7 @@ function type(elementIndex) {
   if (indexes[elementIndex] < texts[elementIndex].length) {
     textElements[elementIndex].textContent += texts[elementIndex].charAt(indexes[elementIndex]);
     indexes[elementIndex]++;
-    setTimeout(() => type(elementIndex), 100); // Adjust the speed of typing here
+    setTimeout(() => type(elementIndex), 125); // Adjust the speed of typing here
   } else if (elementIndex < textElements.length - 1) {
     // Start typing the next text after the current one finishes
     setTimeout(() => type(elementIndex + 1), 500); // Adjust the delay between paragraphs here
@@ -67,11 +69,11 @@ const guru = {
 };
 
 const waktu = {
-  Senin: ["07.50 - 10.10", "10.40 - 12.00 ", "13.15 - 15.30"],
+  Senin: ["08.10 - 10.10", "10.10 - 10.40", "10.40 - 12.00 ", "12.00 - 13.15", "13.15 - 15.30"],
   Selasa: ["07.15 - 10.10", "10.40 - 12.00", "13.15 - 15.30"],
   Rabu: ["07.15 - 10.10", "10.40 - 12.00", "13.15 - 15.30"],
   Kamis: ["07.15 - 10.10", "10.40 - 12.00", "13.15 - 15.30"],
-  Jumat: ["08.30 - 10.10", "10.40 - 11.30", "13.30 - 15.30"],
+  Jumat: ["08.10 - 10.10", "10.10 - 11.30", "11.30 - 13.30", "13.30 - 15.30"],
   Sabtu: ["None", "None", "None", "None", "None"],
   Minggu: ["None", "None", "None", "None", "None"],
 };
@@ -182,4 +184,4 @@ modal.onclick = function(event) {
             modal.classList.remove("show");
         }, 300);
     }
-          }
+                            }
