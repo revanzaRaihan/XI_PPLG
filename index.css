@@ -367,11 +367,6 @@ img.visible{
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
-
-.awan{
-  width: 100%;
-}
-
 footer {
   position: fixed;
   bottom: -100px; /* Hide footer */
