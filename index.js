@@ -49,11 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // SISTEM JADWAL
 const mapel = {
-  Senin: ["PKK", "ISTIRAHAT", "AGAMA ISLAM", "ISHOMA", "B.INDO"],
-  Selasa: ["BASIS DATA", "MATEMATIKA", "PPLG"],
-  Rabu: ["PJOK", "PBO", "PPL"],
-  Kamis: ["PBO", "PKK", "PPLG"],
-  Jumat: ["MATEMATIKA", "PKN", "B.ING"],
+  Senin: ["PKK", "ISTIRAHAT", "PAI", "ISHOMA", "B.INDO"],
+  Selasa: ["BASIS DATA", "ISTIRAHAT", "MTK", "ISHOMA", "PPLG"],
+  Rabu: ["PJOK", "ISTIRAHAT", "PBO", "ISHOMA", "PPL"],
+  Kamis: ["PBO", "ISTIRAHAT", "PKK", "ISHOMA", "PPLG"],
+  Jumat: ["MTK", "ISTIRAHAT", "PKN", "ISHOMA", "B.ING"],
   Sabtu: ["None", "None", "None", "None", "None"],
   Minggu: ["None", "None", "None", "None", "None"],
 };
@@ -71,9 +71,12 @@ const guru = {
 const waktu = {
   Senin: ["08.10 - 10.10", "10.10 - 10.40", "10.40 - 13.50 ", "12.00 - 13.15",
   "13.50 - 15.30"],
-  Selasa: ["07.15 - 10.10", "10.40 - 12.00", "13.15 - 15.30"],
-  Rabu: ["07.15 - 10.10", "10.40 - 12.00", "13.15 - 15.30"],
-  Kamis: ["07.15 - 10.10", "10.40 - 12.00", "13.15 - 15.30"],
+  Selasa: ["07.15 - 10.10", "10.10 - 10.40", "10.40 - 12.00", "12.00 - 13.15",
+  "13.15 - 15.30"],
+  Rabu: ["07.15 - 10.10", "10.10 - 10.40", "10.40 - 12.00", "12.00 - 13.15",
+  "13.15 - 15.30"],
+  Kamis: ["07.15 - 10.10", "No Break", "10.10 - 10.40", "10.40 - 12.00", "12.00 - 13.15",
+  "13.15 - 15.30"],
   Jumat: ["08.10 - 10.10", "10.10 - 11.30", "11.30 - 13.30", "13.30 - 15.30"],
   Sabtu: ["None", "None", "None", "None", "None"],
   Minggu: ["None", "None", "None", "None", "None"],
@@ -185,4 +188,20 @@ modal.onclick = function(event) {
             modal.classList.remove("show");
         }, 300);
     }
-                            }
+}
+
+const container = document.querySelector('.containerMain');
+const footer = document.getElementById('footer');
+
+container.addEventListener('scroll', () => {
+  const scrollTop = container.scrollTop;
+  const scrollHeight = container.scrollHeight;
+  const clientHeight = container.clientHeight;
+  const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
+
+  if (isAtBottom) {
+    footer.style.bottom = '0';
+  } else {
+    footer.style.bottom = '-100px';
+  }
+});
